@@ -1,0 +1,107 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --linkedIn-blue: #0072b1;
+  --linkedIn-accent-blue: #00a0dc;
+  --linkedIn-accent-purple: #8d6cab;
+  --linkedIn-accent-red: #dd5143;
+  --linkedIn-accent-orange: #e68523;
+}
+
+html {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.contact-list {
+  list-style-type: none;
+  display: block;
+}
+
+.contact-list li {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid silver;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-list li img {
+  width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+  font-weight: 500;
+  color: var(--linkedIn-blue);
+}
+
+.profile-text {
+  color: var(--linkedIn-accent-orange);
+  letter-spacing: 0.75px;
+  font-weight: 600;
+}
+
+small {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.pending-button {
+  display: block;
+  width: 95%;
+  padding: 0.25rem 0.75rem;
+  margin: 0 auto;
+  background-color: transparent;
+  border: 2px solid var(--linkedIn-blue);
+  color: var(--linkedIn-blue);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 3px inset rgba(0, 0, 0, 0.15);
+}
+
+.pending-button:hover {
+  background-color: var(--linkedIn-accent-blue);
+  color: white;
+  border-color: var(--linkedIn-accent-blue);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (min-width: 576px) {
+  .contact-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .contact-list li {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .contact-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .contact-list {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
