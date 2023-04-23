@@ -16,9 +16,38 @@ html {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  padding: 2.5rem 3rem;
+  background-color: var(--linkedIn-accent-blue);
+  color: white;
+  _text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--linkedIn-blue);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+}
+
+.filter-buttons button {
+  font-size: 1.35rem;
+  color: white;
+  background-color: var(--linkedIn-accent-orange);
+  border: 2px solid white;
+}
+
+main {
+  padding: 1rem 3rem;
+}
+
 .contact-list {
   list-style-type: none;
   display: block;
+  padding-left: 0;
 }
 
 .contact-list li {
