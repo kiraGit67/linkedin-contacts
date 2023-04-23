@@ -58,3 +58,32 @@ function render(contactData) {
 }
 
 readApi();
+
+const filterButtonMale = document.querySelector("#filter-male");
+const filterButtonFemale = document.querySelector("#filter-female");
+
+filterButtonMale.addEventListener("click", () => {
+  fetch("https://dummy-apis.netlify.app/api/contact-suggestions?count=12").then(
+    (response) =>
+      response.json().then((contactData) => {
+        const filteredContactData = contactData.filter(
+          (contact) => contact.name.title === "Mr"
+        );
+        console.log(filteredContactData);
+        render(filteredContactData);
+      })
+  );
+});
+
+filterButtonFemale.addEventListener("click", () => {
+  fetch("https://dummy-apis.netlify.app/api/contact-suggestions?count=12").then(
+    (response) =>
+      response.json().then((contactData) => {
+        const filteredContactData = contactData.filter(
+          (contact) => contact.name.title !== "Mr"
+        );
+        console.log(filteredContactData);
+        render(filteredContactData);
+      })
+  );
+});
