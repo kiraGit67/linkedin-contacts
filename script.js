@@ -2,13 +2,12 @@
 
 const contactList = document.querySelector(".contact-list");
 
-function readApi() {
-  fetch("https://dummy-apis.netlify.app/api/contact-suggestions?count=12").then(
-    (response) =>
-      response.json().then((contactData) => {
-        console.log(contactData);
-        render(contactData);
-      })
+function readApi(url) {
+  fetch(url).then((response) =>
+    response.json().then((contactData) => {
+      console.log(contactData);
+      render(contactData);
+    })
   );
 }
 
@@ -57,7 +56,7 @@ function render(contactData) {
   }
 }
 
-readApi();
+readApi("https://dummy-apis.netlify.app/api/contact-suggestions?count=12");
 
 const filterButtonMale = document.querySelector("#filter-male");
 const filterButtonFemale = document.querySelector("#filter-female");
